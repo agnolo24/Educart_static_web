@@ -527,6 +527,113 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Form Messages
+--------------------------------------------------------------*/
+.php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.php-email-form .error-message {
+  display: none;
+  color: #721c24;
+  background: #f8d7da;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #155724;
+  background: #d4edda;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #c3e6cb;
+}
+
+.php-email-form button[type="submit"] {
+  background: var(--accent-color);
+  border: 0;
+  padding: 12px 40px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.php-email-form button[type="submit"]:hover {
+  background: #2c3db5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input and textarea styles */
+.php-email-form .form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.php-email-form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(65, 84, 241, 0.25);
+}
+
+.php-email-form textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.php-email-form .loading i {
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+/* Success icon */
+.php-email-form .sent-message i {
+  color: #28a745;
+  margin-right: 8px;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .php-email-form .form-control {
+    padding: 10px 12px;
+  }
+  
+  .php-email-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
