@@ -218,6 +218,34 @@
     </script>
 
   </footer>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxOeIwBeBfdtWzCjGA_5d8zHD4EJXc1nPfFXCBvws4gkMvTmvtcr_f5AQ_XD-4CaQfqtg/exec";
+  const form = document.getElementById("submit-to-google-sheet");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    document.querySelector(".loading").style.display = "block";
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: new FormData(form)   // ✅ send FormData directly
+    })
+    .then(response => response.text())
+    .then(() => {
+      document.querySelector(".loading").style.display = "none";
+      document.querySelector(".sent-message").style.display = "block";
+      form.reset();
+    })
+    .catch(error => {
+      document.querySelector(".loading").style.display = "none";
+      document.querySelector(".error-message").style.display = "block";
+      document.querySelector(".error-message").innerText = "Error: " + error.message;
+    });
+  });
+</script>
+
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -236,3 +264,6 @@
 </body>
 
 </html>
+
+
+<!-- https://script.google.com/macros/s/AKfycbybZQAoFlUNgKKbo9InNaTuLYP-WmM0U8hvs7qY_1Oen4psFj5KsaPb7Lkj8nrgBIXsvw/exec -->
