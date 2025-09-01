@@ -80,7 +80,7 @@
           
           <!-- Form Column -->
           <div class="col-lg-6">
-            <form action="#" method="post" class="enquiry-form">
+            <form id="submit-to-google-sheet" name="submit-to-google-sheet" action="javascript:void(0)" method="post" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="name">Full Name *</label>
@@ -110,15 +110,15 @@
                 <input type="text" class="form-control" name="course" id="course">
               </div>
               <div class="form-group mt-3">
-                <label for="intake">Select Service</label>
-                <select class="form-select" name="intake" id="intake">
+                <label for="service">Select Service</label>
+                <select class="form-select" name="service" id="service">
                   <option value="">Select Service</option>
-                  <option value="Spring 2024">Thesis & Dissertation Guidance</option>
-                  <option value="Fall 2024">Research Proposal Writing</option>
-                  <option value="Spring 2025">Journal Formatting & Submission</option>
-                  <option value="Fall 2025">Plagiarism Correction</option>
-                  <option value="Fall 2025">One-on-One Consultation</option>
-                  <option value="Fall 2025">Academic Editing & Proofreading</option>
+                  <option value="Thesis & Dissertation Guidance">Thesis & Dissertation Guidance</option>
+                  <option value="Research Proposal Writing">Research Proposal Writing</option>
+                  <option value="Journal Formatting & Submission">Journal Formatting & Submission</option>
+                  <option value="Plagiarism Correction">Plagiarism Correction</option>
+                  <option value="One-on-One Consultation">One-on-One Consultation</option>
+                  <option value="Academic Editing & Proofreading">Academic Editing & Proofreading</option>
                 </select>
               </div>
               <div class="form-group mt-3">
@@ -127,6 +127,9 @@
               </div>
               <div class="form-group mt-4 text-center">
                 <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+                <div class="loading" style="display: none;">Sending...</div>
+                <div class="error-message" style="display: none; color: #dc3545; margin-top: 10px;"></div>
+                <div class="sent-message" style="display: none; color: #198754; margin-top: 10px;">Your message has been sent. Thank you!</div>
               </div>
             </form>
           </div>
